@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAllData } from '../services/data';
+import Card from '../components/Card';
 
 function Home() {
   const [showData, setShowData] = useState('');
@@ -16,11 +17,19 @@ function Home() {
     fetchData();
   }, []);
 
-  // const movies = showData.map((movie) => ( key= movie.id movie));
+  const movies = showData.map((movie) => (
+    <Card
+      key={movie.id}
+      image={movie.image}
+      title={movie.title}
+      year={movie.year}
+    />
+  ));
   console.log(showData);
+
   // console.log(movies);
 
-  return <h1>Hola Mundo!</h1>;
+  return <article>{movies}</article>;
 }
 
 export default Home;
