@@ -8,7 +8,7 @@ function Home() {
     const fetchData = async () => {
       try {
         const data = await getAllData();
-        setShowData(data);
+        setShowData(data.items.slice(0, 10));
       } catch (error) {
         console.log(error);
       }
@@ -16,7 +16,9 @@ function Home() {
     fetchData();
   }, []);
 
+  // const movies = showData.map((movie) => ( key= movie.id movie));
   console.log(showData);
+  // console.log(movies);
 
   return <h1>Hola Mundo!</h1>;
 }
