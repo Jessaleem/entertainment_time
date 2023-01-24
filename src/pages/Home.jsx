@@ -25,9 +25,6 @@ function Home() {
       year={movie.year}
     />
   ));
-  console.log(showData);
-
-  // console.log(movies);
 
   return <article>{movies}</article>;
 }
