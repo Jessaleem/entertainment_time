@@ -9,7 +9,7 @@ function Home() {
     const fetchData = async () => {
       try {
         const data = await getAllData();
-        setShowData(data.items.slice(0, 10));
+        setShowData(data.items.slice(0, 12));
       } catch (error) {
         console.log(error);
       }
@@ -26,7 +26,9 @@ function Home() {
     />
   ));
 
-  return <article>{movies}</article>;
+  console.log(showData);
+
+  return <article className='flex flex-wrap justify-around'>{movies}</article>;
 }
 
 export default Home;
