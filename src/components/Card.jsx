@@ -4,10 +4,12 @@ function Card({ image, title, year }) {
       <div className='flex w-80 h-96'>
         <img src={image} alt='movie official poster' />
       </div>
-      <div className='py-5 px-2'>
+      <div className='py-5 px-2 flex justify-between'>
         <h2 className='text-white'>
           <strong>{title}</strong> ({year})
         </h2>
+        <br></br>
+        <button className='text-white'>+</button>
       </div>
     </div>
   );

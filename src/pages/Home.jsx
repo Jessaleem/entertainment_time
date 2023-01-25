@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getAllData } from '../services/data';
 import Card from '../components/Card';
+import Header from '../components/Header';
 
 function Home() {
-  const [showData, setShowData] = useState('');
+  const [showData, setShowData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +29,14 @@ function Home() {
 
   console.log(showData);
 
-  return <article className='flex flex-wrap justify-around'>{movies}</article>;
+  return (
+    <>
+      <Header />
+      <article className='flex flex-wrap justify-around bg-black'>
+        {movies}
+      </article>
+    </>
+  );
 }
 
 export default Home;
