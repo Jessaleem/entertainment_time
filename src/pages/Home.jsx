@@ -32,9 +32,7 @@ function Home() {
   return (
     <>
       <Header />
-      <article className='flex flex-wrap justify-around bg-black'>
-        {movies}
-      </article>
+      <main className='flex flex-wrap justify-around bg-black'>{movies}</main>
     </>
   );
 }
