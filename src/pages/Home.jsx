@@ -10,7 +10,8 @@ function Home() {
     const fetchData = async () => {
       try {
         const data = await getAllData();
-        setShowData(data.items.slice(0, 12));
+        const filteredData = data.items.slice(0, 12);
+        setShowData(filteredData);
       } catch (error) {
         console.log(error);
       }
@@ -21,13 +22,14 @@ function Home() {
   const movies = showData.map((movie) => (
     <Card
       key={movie.id}
+      id={movie.id}
       image={movie.image}
       title={movie.title}
       year={movie.year}
     />
   ));
 
-  console.log(showData);
+  // console.log(showData);
 
   return (
     <>

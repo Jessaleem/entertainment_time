@@ -1,4 +1,29 @@
-function Card({ image, title, year }) {
+import { useState, useEffect } from 'react';
+import { getDescription } from '../services/data';
+
+function Card({ image, title, year, id }) {
+  const [description, setDescription] = useState();
+  // const [click, setClick] = useState(false);
+
+  useEffect(() => {
+    const fetchDescription = async () => {
+      try {
+        const desc = await getDescription(id);
+        setDescription(desc);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchDescription();
+  }, [id]);
+
+  // const handleClick = async (e) => {
+  //   e.preventDefault();
+  // setClick(true);
+  // };
+
+  console.log(description);
+
   return (
     <div className='flex flex-col bg-gray-900 border rounded border-amber-700 m-8 w-64 h-96'>
       <div className='flex  w-64 h-80 border rounded border-slate-700'>
