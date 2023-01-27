@@ -3,8 +3,15 @@ const DESCRIPTION_URL = process.env.REACT_APP_SINOPSIS;
 
 export async function getAllData() {
   try {
-    const result = await fetch(`${BASE_URL}`);
-    return result.json();
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '255b9ad33dmshf980c563c565a35p11ac4cjsn6a0e3ae00e7a',
+        'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com',
+      },
+    };
+    const result = await fetch(`${BASE_URL}`, options);
+    return await result.json();
   } catch (error) {
     return new Error(error);
   }
