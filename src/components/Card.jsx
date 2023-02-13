@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import { getDescription } from '../services/data';
 
 function Card({ image, title, year, id, description }) {
-  const [click, setClick] = useState(false);
+  const [click, setClick] = useState(0);
 
   const handleClick = () => {
-    setClick((prevState) => !prevState);
+    setClick((prev) => prev + 1);
+    // console.log(click);
   };
+
+  useEffect(() => {
+    console.log(click);
+  }, [click]);
 
   return (
     <div className='flex flex-col bg-gray-900 border rounded border-amber-700 m-8 relative'>

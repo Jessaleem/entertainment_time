@@ -1,12 +1,14 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const DESCRIPTION_URL = process.env.REACT_APP_SINOPSIS;
+const KEY = process.env.REACT_APP_RAPIDAPI_KEY;
+// const HOST = process.env.REACT_APP_RAPIDAPI_HOST;
 
 export async function getAllData() {
   try {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '255b9ad33dmshf980c563c565a35p11ac4cjsn6a0e3ae00e7a',
+        'X-RapidAPI-Key': `${KEY}`,
         'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com',
       },
     };

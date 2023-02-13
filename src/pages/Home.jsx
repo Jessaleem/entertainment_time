@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { getAllData } from '../services/data';
 import Card from '../components/Card';
 import Header from '../components/Header';
+import Content from '../components/Content';
+import CardList from '../components/CardList';
 
 function Home() {
   const [showData, setShowData] = useState([]);
@@ -19,14 +21,19 @@ function Home() {
     fetchData();
   }, []);
 
-  const movies = showData.map((movie) => <Card key={movie.id} {...movie} />);
-
   // console.log(showData);
 
   return (
     <>
       <Header />
-      <main className='flex flex-wrap justify-around bg-black'>{movies}</main>
+      <Content>
+        <Content.Movies>
+          <CardList showData={showData} />
+        </Content.Movies>
+        <Content.Comentaries>
+          <p className='text-white'>cualquier cosa</p>
+        </Content.Comentaries>
+      </Content>
     </>
   );
 }
