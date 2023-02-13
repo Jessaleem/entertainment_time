@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import { getDescription } from '../services/data';
 
 function Card({ image, title, year, id, description }) {
@@ -11,11 +12,13 @@ function Card({ image, title, year, id, description }) {
   return (
     <div className='flex flex-col bg-gray-900 rounded m-8 relative'>
       <div className='flex rounded'>
-        <img
-          className='object-cover rounded'
-          src={image}
-          alt='movie official poster'
-        />
+        <Link to={`/movie-detail/${id}`}>
+          <img
+            className='object-cover rounded cursor-pointer'
+            src={image}
+            alt='movie official poster'
+          />
+        </Link>
       </div>
       <div className='py-5 px-5 flex justify-between items-center'>
         <h2 className='text-white'>
