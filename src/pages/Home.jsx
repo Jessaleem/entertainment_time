@@ -21,8 +21,6 @@ function Home() {
     fetchData();
   }, []);
 
-  // console.log(showData);
-
   return (
     <>
       <Header />
