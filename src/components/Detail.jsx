@@ -20,13 +20,13 @@ function Detail({ detail }) {
           <div className='text-white'>
             Genre:
             {detail.genre?.map((item, index) => {
-              return <span key={index}> {item} </span>;
+              return <span key={index}>{(index ? ', ' : ' ') + item} </span>;
             })}
           </div>
           <div className='text-white'>
             Writters:
             {detail.writers.map((writer, index) => {
-              return <span key={index}> {writer}</span>;
+              return <span key={index}>{(index ? ', ' : ' ') + writer}</span>;
             })}
           </div>
         </div>
